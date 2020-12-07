@@ -21,14 +21,16 @@
     prefix=eiti
 }
 
-\DeclareStringOption[2.5cm]{left}
-\DeclareStringOption[2.5cm]{right}
+\DeclareStringOption[3cm]{left}
+\DeclareStringOption[2cm]{right}
 \DeclareStringOption[2.5cm]{top}
 \DeclareStringOption[2.5cm]{bottom}
-\DeclareStringOption[6mm]{bindingoffset}
+\DeclareStringOption[0mm]{bindingoffset}
 \DeclareBoolOption[false]{nohyphenation}
 \ProcessKeyvalOptions*
 
+\linespread{1.15}
+\setlength{\parindent}{0.5cm}
 %--------------------------------
 % Common packages
 %--------------------------------
