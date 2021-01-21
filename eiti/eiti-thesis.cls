@@ -431,7 +431,12 @@
         \hfill \break
         \hfill \break
         \large
-        \@title \\
+        \ifnum \pdf@strcmp{\@lang}{polish} = 0
+            \@title \\
+        \fi
+        \ifnum \pdf@strcmp{\@lang}{english} = 0
+            \@engtitle \\
+        \fi
         \hfill \break
         \hfill \break
         \LARGE
@@ -510,7 +515,8 @@
 
 \let\standardappendix\appendix
 \renewcommand\appendix[1]{%
-    \tocless\section{\hspace*{1.5em} #1}
+    \refstepcounter{section}
+    \tocless{\section*}{\@appendixtitle~\arabic{section}.\hspace*{0.5em} #1}
     \addcontentsline{app}{subsection}{\hspace*{-1.1em}\arabic{section}.\hspace*{0.5em} #1}
 }
 
@@ -523,5 +529,5 @@
     \fi
 
     \standardappendix
-    \renewcommand{\thesection}{\@appendixtitle~\arabic{section}}
+    \renewcommand{\thesection}{\arabic{section}}
 }
